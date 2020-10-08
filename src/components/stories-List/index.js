@@ -38,7 +38,7 @@ const StoriesList = ({ data }) => {
             </div>
             <ul className="list-section">
             {Array.isArray(data) && data.length > 0 && 
-                data.map((o,i)=>showSTory(o.fields.customfield_10032) && <li onClick={()=>{set_issue(o)}} key={o.id}>{o.id}--- {o.key}---points:{o.fields.customfield_10032}</li>)}
+                data.map((o,i)=>showSTory(o.fields.customfield_10032) && <li key={o.id}><a onClick={()=>{set_issue(o)}}>{o.key}-{o.id}</a>--- <span className="points">{o.fields.customfield_10032}</span></li>)}
             </ul>
                 </>
             }

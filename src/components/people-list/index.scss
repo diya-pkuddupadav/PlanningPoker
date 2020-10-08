@@ -1,5 +1,6 @@
 .people_list{
     margin: 10px 0;
+    border-radius: 0 0 6px 6px;
 
     .heading {
         background-color: #a3adba;
@@ -7,6 +8,31 @@
         padding: 10px 26px;
         color: #2b2b2b;
         font-weight: 500;
+        position: relative;
+        border-radius: 6px 6px 0 0;
+    }
+
+    .action-icons {
+        position: absolute;
+        right: 14px;
+        top: 1px;
+
+        ul {
+            list-style: none;
+            margin: 0;
+
+            li {
+                display: inline-block;
+
+                button {
+                    background: transparent;
+                    border: navajowhite;
+                    outline: none;
+                    float: right;
+                    font-size: 20px;
+                }
+            }
+        }
     }
 
     ul.list{
@@ -15,7 +41,7 @@
         overflow: auto;
         padding: 0;
         margin: 0;
-        padding: 6px 16px 6px 12px;
+        padding: 6px 16px 16px 12px;
 
         li {
             display: flex;
