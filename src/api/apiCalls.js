@@ -224,7 +224,7 @@ export const EditIssueDetails = (issue_id,data) =>{
     const api_token = localStorage.getItem('auth_token');
     const query="test"
     return fetch(`${baseURl}rest/api/2/issue/${issue_id}`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Authorization': `Bearer ${api_token}`,
             'Accept': 'application/json'
