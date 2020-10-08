@@ -21,7 +21,7 @@ const IssueShowDetails = ({ issue,set_issue }) => {
                 "customfield_10032": points
             }
         }
-        EditIssueDetails(issue_data.id,JSON.stringify(data)).then(()=>{
+        EditIssueDetails(issue_data.id,JSON.data).then(()=>{
             getIssueDetails(issue_data.id).then(res=>{
                 setissue_data(res)
             });

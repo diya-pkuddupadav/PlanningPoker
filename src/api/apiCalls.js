@@ -229,7 +229,7 @@ export const EditIssueDetails = (issue_id,data) =>{
             'Authorization': `Bearer ${api_token}`,
             'Accept': 'application/json'
         },
-        body: data
+        body: JSON.stringify(data)
     })
         .then(response => {
             return response.text();
