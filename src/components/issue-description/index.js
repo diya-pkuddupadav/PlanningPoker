@@ -34,17 +34,22 @@ const IssueShowDetails = ({ issue,set_issue }) => {
 
     
     return (
-        <div className="issue_desc">
-            <button onClick={()=>set_issue({})}>goback</button>
-           { issue_data && Object.keys(issue_data).length > 0 && <>
-            <div><h3>title: </h3>{issue_data.fields.summary}</div>
-            <div><h3>Description: </h3>
-                <br />
-                <ReactMarkdown source={issue_data.fields.description} escapeHtml={false} /></div>
-            <div><h3>Points: <input value={points} type="number" onBlur={(e)=>EditIsuueDetail(points)} onChange={(e)=>setPoints(e.target.value)}/></h3>
-                <PointsBoard issue={issue}/>
+        <div>
+            <PointsBoard issue={issue}/>
+            <div className="estimate">
+                <p>Estimate: <input value={points} type="number" onBlur={(e)=>EditIsuueDetail(points)} onChange={(e)=>setPoints(e.target.value)}/></p>
+           </div>
+            <div className="issue_desc">
+                <button className="back-btn" onClick={()=>set_issue({})}><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+            { issue_data && Object.keys(issue_data).length > 0 && <>
+                <div  className="story-heading"><p>EIGFOS-1212</p>
+                <h3>{issue_data.fields.summary}</h3></div>
+                <div><h6>Description: </h6>
+                    <div class="field"><ReactMarkdown source={issue_data.fields.description} escapeHtml={false} /></div>
+                    </div>
+                
+                </>}
             </div>
-            </>}
         </div>
 
     )
