@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PointsBoard from '../points-board';
-import {EditIssueDetails,getIssueDetails} from '../../api/apiCalls';
+import {EditIssueDetails,getIssueDetails,getMetaData} from '../../api/apiCalls';
 
 import './index.scss';
 
@@ -18,10 +18,12 @@ const IssueShowDetails = ({ issue,set_issue }) => {
         if(points && points > 0){
         const data ={
             "fields": {
-                "customfield_10032": points
+                "customfield_10032": [
+                    {"value":points}
+                ]
             }
         }
-        EditIssueDetails(issue_data.id,JSON.data).then(()=>{
+        EditIssueDetails(issue_data.key,data).then(()=>{
             getIssueDetails(issue_data.id).then(res=>{
                 setissue_data(res)
             });
@@ -36,6 +38,7 @@ const IssueShowDetails = ({ issue,set_issue }) => {
     return (
         <div className="issue_desc">
             <button onClick={()=>set_issue({})}>goback</button>
+            <button onClick={()=>{getMetaData(issue_data.id)}}>get data </button>
            { issue_data && Object.keys(issue_data).length > 0 && <>
             <div><h3>title: </h3>{issue_data.fields.summary}</div>
             <div><h3>Description: </h3>

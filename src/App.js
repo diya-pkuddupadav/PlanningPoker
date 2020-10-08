@@ -7,7 +7,7 @@ import {getAuth, getUserData , getAllProject,getAccessableResource} from './api/
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css'
-
+// import json from './atlassian-connect.json';
 function App() {
   const [ project , setProject ] = useState('');
   const history = createBrowserHistory();
@@ -15,6 +15,7 @@ function App() {
   let search = window.location.search;
   let params = new URLSearchParams(search);
   const code = params.get('code');
+  
   useEffect(()=>{
     if (!auth_token && !code) {
       window.location.href = constants.REST_API_authorization_URL;
@@ -45,7 +46,6 @@ function App() {
       }
     }
   },[])
-  
   return (
     <BrowserRouter history={history}>
       <Route path="/" component={() => <PlanningPoker project={project}/>} />
