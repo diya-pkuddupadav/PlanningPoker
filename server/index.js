@@ -12,8 +12,6 @@ app.use(bodyParser.json());
 app.get('/savePoints', (req, res) => {
   console.log(req.query)
   db.find({ issue: req.query.key }, function (err, docs) {
-    // docs is an array containing documents Mars, Earth, Jupiter
-    // If no document is found, docs is equal to []
     res.send({status:200,data:docs})
   });
   
@@ -47,8 +45,6 @@ app.post('/savePoints',(req,res)=>{
 app.delete('/savePoints', (req, res) => {
     console.log(req.query)
     db.remove({ issue: req.query.key }, function (err, docs) {
-      // docs is an array containing documents Mars, Earth, Jupiter
-      // If no document is found, docs is equal to []
       res.send({status:200,data:docs})
     });
     
