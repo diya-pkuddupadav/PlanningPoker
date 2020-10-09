@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import {EditIssueDetails,getIssueDetails,getMetaData} from '../../api/apiCalls';
 
-import './index.scss';
+import './index.css';
 
 
 const IssueShowDetails = ({ issue,set_issue }) => {

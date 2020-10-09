@@ -1,0 +1,20 @@
+.points-table {
+    background-color: f4f5f7;
+    padding: 15px;
+}
+.points-table h3 {
+    text-transform: uppercase;
+}
+.points-table button {
+    padding: 15px;
+    margin: 10px;
+    background-color: #00a6bd;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    width: 100px;
+    height: 50px;
+    padding: 0;
+    color: #fff;
+}

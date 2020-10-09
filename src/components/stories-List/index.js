@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import IssueDescription from '../issue-description';
 import PeopleList from '../people-list';
 import PointsBoard from '../points-board';
-import './index.scss';
+import './index.css';
 
 const StoriesList = ({ data , people}) => {
     const [s_issue, set_issue] = useState({});

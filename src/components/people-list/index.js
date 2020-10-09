@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import {getPoints, deletePoints} from '../../api/apiCalls';
-import './index.scss';
+import './index.css';
 
 const PeopleList = ({ data, s_issue }) => {
 

@@ -1,7 +1,7 @@
 const data = {
     "client_id": "Usw2gA0sFPvl9snuyTqTdw6yNRcCI4ng",
     "client_secret":"fkAX03ILXCbH5sIFiaVDeC3J_Hy1iZrL5gPaKN8zmMqQ32J5GTQ-Z3OAC_91t3xS",
-    "Callback_URL":"https://935d02ededa2.ngrok.io",
+    "Callback_URL":"https://9e6d2e3f5870.ngrok.io",
     "YOUR_USER_BOUND_VALUE":"",
     "API":{
         getAuth:'https://auth.atlassian.com/oauth/token'

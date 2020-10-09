@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import Search from '../../../components/Search';
 import StoriesList from '../../../components/stories-List';
-import './index.scss';
+import './index.css';
 // import data from '../../../helpers/constants';
 import {getProjectPeople, searchIsuue, getAllData} from '../../../api/apiCalls';
 

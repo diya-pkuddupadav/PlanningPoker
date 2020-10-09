@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.scss';
+import './index.css';
 import {savePoints} from '../../api/apiCalls';
 
 const PointsBoard = ({issue})=>{
