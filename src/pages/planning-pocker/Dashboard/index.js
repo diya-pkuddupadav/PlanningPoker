@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
 // import Search from '../../../components/Search';
 import StoriesList from '../../../components/stories-List';
-import PeopleList from '../../../components/people-list';
 import './index.scss';
 // import data from '../../../helpers/constants';
-import {getPeopleInProject, getgroups, getProjectPeople, searchIsuue} from '../../../api/apiCalls';
+import {getProjectPeople, searchIsuue, getAllData} from '../../../api/apiCalls';
 
 const Dashboard = ({ project }) => {
     const [s_Project, setS_Project] = useState({});
     const [people,setPeople] = useState([]);
     const [issue,setIssue] = useState({});
+    const [allData, setAllData] = useState({});
+
+    useEffect(()=>{
+        getAllData().then((data)=>{
+            setAllData(data);
+            console.log('allData',data);
+        });
+    },[])
 
     useEffect(() => {
         if (Array.isArray(project) && project.length > 0) {
@@ -46,7 +53,7 @@ const Dashboard = ({ project }) => {
                     </div> 
                     {
                         Array.isArray(project) && project.length > 0 &&
-                        <div className="col-md-3 text-right">Select Story Bucket: 
+                        <div className="col-md-3 text-right">Select Project: 
                             <select defaultValue={s_Project.name} onChange={(event) => { setS_Project(project[event.target.value]) }}>
                                 {project.map((data, i) => <option value={i}>{data.name}</option>)}
                             </select>
@@ -56,8 +63,8 @@ const Dashboard = ({ project }) => {
             </div>
             <div className="container-stories container-fluid">
                 <div className="row">
-                    {issue && issue.issues && <StoriesList data={issue.issues || []}/>}
-                    <PeopleList data={people}/>
+                    {issue && issue.issues && <StoriesList data={issue.issues || []} people={people}/>}
+                   
                 </div>
             </div>
         </div>

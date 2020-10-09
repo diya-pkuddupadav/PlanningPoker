@@ -50,7 +50,7 @@ export const getUserData = () => {
             return response.text();
         })
         .then(response => {
-            localStorage.setItem('user_details', JSON.stringify(response))
+            localStorage.setItem('user_details', response)
             return response;
         })
         .catch(err => console.error(err));
@@ -265,3 +265,84 @@ export const getMetaData = (issue_id,data) =>{
         .catch(err => console.error(err));
 }
 
+
+
+
+export const getAllData = () =>{
+    const resource_list = JSON.parse(localStorage.getItem('resource_list'));
+    const CLOUD_ID = resource_list && resource_list.length > 0 ?resource_list[0].id:'';
+    const baseURl = `https://api.atlassian.com/ex/jira/${CLOUD_ID}/`;
+    const api_token = localStorage.getItem('auth_token');
+
+    return fetch(`${baseURl}rest/api/2/screens`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${api_token}`,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            return response.text();
+        })
+        .then(response => {
+            return JSON.parse(response);
+        })
+        .catch(err => console.error(err));
+}
+
+
+export const savePoints = (data) =>{
+    const baseURl = `http://localhost:5000`;
+
+    return fetch(`${baseURl}/savePoints`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            return response.text();
+        })
+        .then(response => {
+            return JSON.parse(response);
+        })
+        .catch(err => console.error(err));
+}
+
+export const getPoints = (key) =>{
+    const baseURl = `http://localhost:5000`;
+
+    return fetch(`${baseURl}/savePoints?key=${key}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            return response.text();
+        })
+        .then(response => {
+            return JSON.parse(response);
+        })
+        .catch(err => console.error(err));
+}
+
+export const deletePoints = (key) =>{
+    const baseURl = `http://localhost:5000`;
+
+    return fetch(`${baseURl}/savePoints?key=${key}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+        .then(response => {
+            return response.text();
+        })
+        .then(response => {
+            return JSON.parse(response);
+        })
+        .catch(err => console.error(err));
+}
