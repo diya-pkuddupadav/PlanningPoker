@@ -11,8 +11,8 @@ const PeopleList = ({ data, s_issue }) => {
     const getData = ()=>{
         setView(false);
         setTotalPoints(0);
-        if(s_issue && s_issue.id){
-            getPoints(s_issue.id).then((data)=>{
+        if(s_issue && s_issue.key){
+            getPoints(s_issue.key).then((data)=>{
               setPoints(data.data.length > 0?data.data[0]:{});
             })
         }
@@ -32,7 +32,7 @@ const PeopleList = ({ data, s_issue }) => {
             }
         })
         setTotalPoints(parseInt(total/totalPeople));
-        deletePoints(s_issue.id)
+        deletePoints(s_issue.key)
     }
 
     return (
@@ -52,7 +52,7 @@ const PeopleList = ({ data, s_issue }) => {
                 <ul className="list">
                     {
                         data && data.length > 0 && 
-                        data.map((user,i)=>user.accountType == 'atlassian' && <li><img src={user.avatarUrls['16x16']}/>{user.displayName}
+                        data.map((user,i)=>user.accountType == 'atlassian' && <li><span><img src={user.avatarUrls['16x16']}/>{user.displayName}</span>
                         {s_issue && Object.keys(s_issue).length> 0 && !view && <i class={`fa fa-thumbs-up ${(points && points.people && points.people.hasOwnProperty(user.accountId))?'active':'' }`}></i>}
                         {s_issue && Object.keys(s_issue).length> 0 && view && <span className="points">{(points && points.people && points.people.hasOwnProperty(user.accountId))? points.people[user.accountId] :'-'}</span>}
                         </li>)

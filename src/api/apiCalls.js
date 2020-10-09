@@ -293,7 +293,7 @@ export const getAllData = () =>{
 
 
 export const savePoints = (data) =>{
-    const baseURl = `http://localhost:5000`;
+    const baseURl = constant.backendURL;
 
     return fetch(`${baseURl}/savePoints`, {
         method: 'POST',
@@ -312,7 +312,7 @@ export const savePoints = (data) =>{
 }
 
 export const getPoints = (key) =>{
-    const baseURl = `http://localhost:5000`;
+    const baseURl = constant.backendURL;
 
     return fetch(`${baseURl}/savePoints?key=${key}`, {
         method: 'GET',
@@ -330,7 +330,7 @@ export const getPoints = (key) =>{
 }
 
 export const deletePoints = (key) =>{
-    const baseURl = `http://localhost:5000`;
+    const baseURl = constant.backedURL;
 
     return fetch(`${baseURl}/savePoints?key=${key}`, {
         method: 'GET',

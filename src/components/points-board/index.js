@@ -8,7 +8,7 @@ const PointsBoard = ({issue})=>{
     const updatePoints = (point)=>{
         let user_detail = JSON.parse(localStorage.getItem('user_details'))
         let data ={
-            "issue": issue.id,
+            "issue": issue.key,
             "people":{}
         }
         data.people[user_detail.account_id] = point;

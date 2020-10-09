@@ -6,7 +6,8 @@ const data = {
     "API":{
         getAuth:'https://auth.atlassian.com/oauth/token'
     },
-    "BaseURL": "https://praveen-testing.atlassian.net/"
+    "backendURL": "http://localhost:5000",
+    
 }
 data.REST_API_authorization_URL = `https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=${data.client_id}&scope=write%3Ajira-work%20read%3Ame%20read%3Ajira-work%20manage%3Ajira-project%20manage%3Ajira-configuration%20manage%3Ajira-data-provider%20read%3Ajira-user%20report:personal-data&redirect_uri=${data.Callback_URL}&state=${data.YOUR_USER_BOUND_VALUE}&response_type=code&prompt=consent`
 
