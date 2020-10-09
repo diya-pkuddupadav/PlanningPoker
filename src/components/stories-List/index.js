@@ -1,8 +1,10 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import IssueDescription from '../issue-description';
-import './index.scss';
+import PeopleList from '../people-list';
+import PointsBoard from '../points-board';
+import './index.css';
 
-const StoriesList = ({ data }) => {
+const StoriesList = ({ data , people}) => {
     const [s_issue, set_issue] = useState({});
     const [storyType, setSToryType] = useState("pending");
     const showSTory = (points)=>{
@@ -20,7 +22,9 @@ const StoriesList = ({ data }) => {
             }
         }
     }
+
     return (
+        <>
         <div className="col-md-8">
             <div className="stories_list boxbg container">
             {(!s_issue || Object.keys(s_issue).length == 0) &&
@@ -38,13 +42,18 @@ const StoriesList = ({ data }) => {
             </div>
             <ul className="list-section">
             {Array.isArray(data) && data.length > 0 && 
-                data.map((o,i)=>showSTory(o.fields.customfield_10032) && <li onClick={()=>{set_issue(o)}} key={o.id}>{o.id}--- {o.key}---points:{o.fields.customfield_10032}</li>)}
+                data.map((o,i)=>showSTory(o.fields.customfield_10032) && <li key={o.id}><a onClick={()=>{set_issue(o)}}>{o.key}</a><span className="summary">{o.fields.summary}</span><span className="points">{o.fields.customfield_10032}</span></li>)}
             </ul>
                 </>
             }
-            {s_issue && Object.keys(s_issue).length > 0 && <IssueDescription issue={s_issue} set_issue={set_issue}/>}
+            {s_issue && Object.keys(s_issue).length > 0 && <>
+                <PointsBoard issue={s_issue}/>
+                <IssueDescription issue={s_issue} set_issue={set_issue}/>
+            </>}
             </div>
         </div>
+        <PeopleList data={people} s_issue={s_issue}/>
+        </>
     );
 }
 
