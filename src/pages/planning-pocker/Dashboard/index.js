@@ -49,7 +49,12 @@ const Dashboard = ({ project }) => {
             <div className="container-head container-fluid">
                 <div className="row">
                     <div className="col-md-9">
-                       <h3>Planning Poker</h3>
+                       <div className="backButton">
+                         <button className="back-btn" onClick={(ev) => { window.history.back()}}>
+                           <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                         </button>
+                         <h3>Planning Poker</h3>
+                       </div>
                     </div> 
                     {
                         Array.isArray(project) && project.length > 0 &&

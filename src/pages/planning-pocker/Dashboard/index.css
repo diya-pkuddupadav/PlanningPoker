@@ -7,3 +7,16 @@
 .main-div h3 {
     margin-bottom: 20px;
 }
+
+.backButton{
+    display: flex;
+}
+.backButton button{
+    background: none;
+    border: none;
+    border-radius: 50%;
+    padding: 0 5px;
+}
+.backButton h3{
+    margin-bottom: 0;
+}
