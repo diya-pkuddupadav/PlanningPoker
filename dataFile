@@ -1,5 +1,3 @@
-{"issue":"TEST-4","people":{"5f7ae9d2459d4200698f1012":3},"_id":"eSDU2qvu5FbnDKNM"}
-{"issue":"TEST-4","people":{"5f7ae9d2459d4200698f1012":3,"5f7d8f5cbd1298006f014f90":"4","5ba9be4af45f9d5cf17fbfa3":"3"},"_id":"eSDU2qvu5FbnDKNM"}
-{"issue":"TEST-2","people":{"5f7ae9d2459d4200698f1012":3},"_id":"Di3rnTuP0L5f8Zdd"}
 {"issue":"TEST-2","people":{"5f7ae9d2459d4200698f1012":3,"5f7d8f5cbd1298006f014f90":"4","5ba9be4af45f9d5cf17fbfa3":"3"},"_id":"Di3rnTuP0L5f8Zdd"}
 {"issue":"TEST-3","people":{"5f7ae9d2459d4200698f1012":3},"_id":"XA4xFhYd16EH1wwn"}
+{"issue":"TEST-4","people":{"5f7ae9d2459d4200698f1012":3,"5f7d8f5cbd1298006f014f90":"4","5ba9be4af45f9d5cf17fbfa3":"3"},"_id":"eSDU2qvu5FbnDKNM"}

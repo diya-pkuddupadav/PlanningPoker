@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5000
+const port = process.env.PORT || 3000;
 const Datastore = require('nedb');
 const db = new Datastore({ filename: './dataFile', autoload: true });
 const bodyParser = require("body-parser");
