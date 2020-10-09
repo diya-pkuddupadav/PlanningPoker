@@ -1,0 +1,27 @@
+
+{
+    "name": "Planning Poker",
+    "description": "Atlassian Connect app",
+    "key": "com.example.myplanningapp",
+    "baseUrl": "https://atlas-planning-poker.herokuapp.com",
+    "vendor": {
+        "name": "Example, Inc.",
+        "url": "http://example.com"
+    },
+    "authentication": {
+        "type": "none"
+    },
+    "apiVersion": 1,
+    "modules": {
+        "generalPages": [
+            {
+                "url": "/Retrospective/Dashboard/",
+                "key": "index",
+                "location": "system.top.navigation.bar",
+                "name": {
+                    "value": "Fun Planning Poker"
+                }
+            }
+        ]
+    }
+}
