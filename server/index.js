@@ -23,13 +23,13 @@ app.post('/savePoints',(req,res)=>{
     console.log(req.body);
 
     db.find({ issue: req.body.issue}, function (err, docs) {
-        if(err){
+        if(docs.length == 0){
             db.insert({...docs,...req.body}, function (err, newDoc) {  
                 if(err){
                     res.send({status:400})
                 }
                 console.log(newDoc)
-                res.send({status:200}) 
+                res.send({status:200, newDoc}) 
             });
         }else{
             db.update({ issue: req.body.issue},{ $set: {"people":{...docs[0].people,...req.body.people}}}, function (err, newDoc) {  

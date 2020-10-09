@@ -32,7 +32,7 @@ const PeopleList = ({ data, s_issue }) => {
             }
         })
         setTotalPoints(parseInt(total/totalPeople));
-        deletePoints(s_issue)
+        deletePoints(s_issue.id)
     }
 
     return (
