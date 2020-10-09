@@ -37,7 +37,7 @@ const StoriesList = ({ data , people}) => {
                     </ul>
                 </div>
                 <div className="col-md-4 col-sm-6">
-                    <button className="sync"><i class="fa fa-spin fa-refresh" aria-hidden="true"></i></button>
+                    <button className="sync"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                 </div>
             </div>
             <ul className="list-section">
